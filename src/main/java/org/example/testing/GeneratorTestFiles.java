@@ -14,9 +14,9 @@ public class GeneratorTestFiles {
         for (int i = 0; i < numberFiles; i++) {
 
             if(ascOrder)
-                generateIntegerFileAsc("in" + i + ".txt");
+                generateIntegerFileAsc(getPath(i));
             else
-                generateIntegerFileDesc("in" + i + ".txt");
+                generateIntegerFileDesc(getPath(i));
         }
     }
 
@@ -25,9 +25,9 @@ public class GeneratorTestFiles {
         for (int i = 0; i < numberFiles; i++) {
 
             if(ascOrder)
-                generateStringFileAsc("in" + i + ".txt");
+                generateStringFileAsc(getPath(i));
             else
-                generateStringFileDesc("in" + i + ".txt");
+                generateStringFileDesc(getPath(i));
         }
     }
 
@@ -93,5 +93,9 @@ public class GeneratorTestFiles {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static String getPath(int number) {
+        return "files/in" + number + ".txt";
     }
 }

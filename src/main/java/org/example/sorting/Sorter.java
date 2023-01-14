@@ -58,7 +58,7 @@ public class Sorter implements Callable<String> {
         return output;
     }
 
-    private Comparable skip(Reader reader, Comparable value) {
+    private Comparable skip(Reader reader, Comparable value) {  // Skip incorrect data from file
         var temp = reader.next();
         while(temp != null && lessThanWithOrder(temp, value))
             temp = reader.next();
