@@ -11,7 +11,6 @@ public class IntegerReader extends Reader<Integer> {
 
     @Override
     public Integer next() {
-
         return buffer = (reader.hasNextInt()) ? reader.nextInt() : null;
     }
 

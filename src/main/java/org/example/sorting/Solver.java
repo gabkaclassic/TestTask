@@ -162,6 +162,12 @@ public class Solver {
             exitAfterErrorMessage("Required one output file");
         if(inputFilesList.size() == 0)
             exitAfterErrorMessage("Required input files");
+
+        try {
+            Files.deleteIfExists(Path.of(outputFile));
+        } catch (IOException e) {
+            exitAfterErrorMessage("Error when output file cleaning: " + e.getMessage());
+        }
     }
 
     private String getFilePath(String argument) {
